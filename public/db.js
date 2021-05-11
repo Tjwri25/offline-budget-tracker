@@ -6,7 +6,7 @@ const request = indexedDB.open("BudgetDB", budgetVersion || 3);
 
 
 request.onupgradeneeded = function (e) {
-  console.log("offline - indexDB");
+  console.log("offline");
   db = e.target.result;
   if (db.objectStoreNames.length === 0) {
       db.createObjectStore('BudgetStore', { autoIncrement: true });
